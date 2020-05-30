@@ -1,34 +1,8 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Главная</title>
-	<meta name="description" content="Смотри.Кино - кино портал" />
-	<meta name="keywords" content="фильмы, фильмы онлайн, hd" />
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
-	<div class="main">
-		<div class="header">			
-			<div class="logo">				
-				<div class="logo_text">		
-					<h1><a href="/index">Смотри.Кино</a></h1>		
-					<h2>Кино - это наша страсть</h2>
-				</div>
-			</div>	
-			
-			<div class="menubar">
-				<ul class="menu">					
-				<li class="selected"><a href="/index">Главная</a></li>
-				<li><a href="/films">Фильмы</a></li>
-				<li><a href="/serials">Сериалы</a></li>
-				<li><a href="/rating">Рейтинг фильмов</a></li>
-				<li><a href="/contact">Контакты</a></li>
-				</ul>
-			</div>			
-		</div>
-		
+@extends('layouts.header')
+@section('title')
+Главная
+@endsection
+@section('content')
 		<div class="site_content">
 
 			<div class="sidebar_container">
@@ -105,33 +79,21 @@
 						<p>
 							
 						45 лет испольнилось Кристоферу Нолану - одному из самых успешных режиссеров нашего времени, чьи работы одинакого любимы как взыскательными критиками, так и простыми зрителями. Фильмом изначально занималась студия Paramount. Когда Кристофер Нолан занял место режиссера, студия Warner Bros., которая выпускала его последние фильмы, добилась участия в прокате.
-
 						</p>
-
 					</div>
-					
 					<p><a href="#">читать</a></p>
-
-
 										<hr>
 					<h2><a href="#">Новости прямиком от автора</a></h2>
 					<div class="posts_content">
-						
 						<p>
-							
 						Надеюсь не зря сидел старался
-
 						</p>
-
 					</div>
-					
 					<p><a href="#">читать</a></p>
-
 				</div>
 			</div>
+		</div>	
 
-		</div>
-		
 		<div class="footer">
 			<p>
 				<a href="/index">Главная</a> |
@@ -142,8 +104,5 @@
 			</p>
 			<p>Смотри-Кино.com 2020</p>
 		</div>
-
 	</div>
-
-</body>
-</html>
+@endsection

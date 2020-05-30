@@ -14,57 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 /*Главные страницы*/
-
-Route::get('/index', function () {
-    return view('index');
-});
-
-Route::get('/films', function () {
-    return view('films');
-});
-
-Route::get('/serials', function () {
-    return view('serials');
-});
-
-Route::get('/rating', function () {
-    return view('rating');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
+Route::get('/index', 'ApiController@indexAction');
+Route::get('/films', 'ApiController@filmsAction');
+Route::get('/serials', 'ApiController@serialsAction');
+Route::get('/rating', 'ApiController@ratingAction');
+Route::get('/contact', 'ApiController@contactAction');
 /*Фильмы и сериалы*/
-
-Route::get('/matrix', function () {
-    return view('matrix');
-});
-
-Route::get('/max', function () {
-    return view('max');
-});
-
-Route::get('/show', function () {
-    return view('show');
-});
-
-Route::get('/cloud', function () {
-    return view('cloud');
-});
-
-Route::get('/dead', function () {
-    return view('dead');
-});
-
-Route::get('/breakingbad', function () {
-    return view('breakingbad');
-});
-
-Route::get('/silicon', function () {
-    return view('silicon');
-});
-
-Route::get('/xfiles', function () {
-    return view('xfiles');
-});
+Route::get('/matrix', 'ApiController@matrixAction');
+Route::get('/max', 'ApiController@maxAction');
+Route::get('/show', 'ApiController@showAction');
+Route::get('/cloud', 'ApiController@cloudAction');
+Route::get('/dead', 'ApiController@deadAction');
+Route::get('/breakingbad', 'ApiController@breakingbadAction');
+Route::get('/silicon', 'ApiController@siliconAction');
+Route::get('/xfiles', 'ApiController@xfilesAction');
