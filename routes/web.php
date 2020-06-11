@@ -28,3 +28,5 @@ Route::get('/dead', 'ApiController@deadAction');
 Route::get('/breakingbad', 'ApiController@breakingbadAction');
 Route::get('/silicon', 'ApiController@siliconAction');
 Route::get('/xfiles', 'ApiController@xfilesAction');
+/*Это другое*/
+Route::get('/getVideo_list', 'ApiController@getVideo_list');

@@ -60,4 +60,8 @@ class ApiController extends Controller
     {
     	return view('xfiles');
     }
+    public function getVideo_list(Request $request)
+    {
+        dump((new Video_listController())->show());
+    }
 }
