@@ -21,10 +21,10 @@
 			<div class="menubar">
 				<ul class="menu">					
 				<li><a href="/index">Главная</a></li>
-				<li><a href="/films">Фильмы</a></li>
-				<li><a href="/serials">Сериалы</a></li>
+				<li><a href="/films">Фильмы и сериалы</a></li>
 				<li><a href="/rating">Рейтинг фильмов</a></li>
 				<li><a href="/contact">Контакты</a></li>
+				<li><a href="/reg">Регистрация</a></li>
 				</ul>
 			</div>			
 		</div>

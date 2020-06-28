@@ -7,21 +7,25 @@
 			<div class="sidebar_container">
 				<div class="sidebar">
 					<h2>Поиск</h2>
-					<form method="post" action="#" id="search_form">
+					<form method="get" action="/search" id="search_form">
 						<input type="search" name="search_field" placeholder="Ваш запроос" />
 						<input type="submit" class="btn" value="найти" />
 					</form>
 				</div>
 				<div class="sidebar">
+					@if (!Auth::check())
 					<h2>Вход</h2>
-					<form method="post" action="#" id="login">
-						<input type="text" name="login_field" placeholder="логин" />
-						<input type="password" name="password_field" placeholder="пароль" />
+					<form method="get" action="/auth" id="login">
+						<input type="text" name="login" placeholder="логин" />
+						<input type="password" name="password" placeholder="пароль" />
 						<input type="submit" class="btn" value="вход" />
 						<div class="lables_passreg_text">
 							<span><a href="#">забыли пароль?</a></span> | <span><a href="#">регестрация</a></span>
 						</div>
 					</form>
+					@else
+						<a href="/logout">выход</a>
+					@endif
 				</div>
 				<div class="sidebar">
 					<h2>Новости</h2>

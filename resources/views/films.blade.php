@@ -1,27 +1,31 @@
 @extends('layouts.header')
 @section('title')
-Фильмы
+Фильмы и сериалы
 @endsection
 @section('content')
 		<div class="site_content">
 			<div class="sidebar_container">
 				<div class="sidebar">
 					<h2>Поиск</h2>
-					<form method="post" action="#" id="search_form">
+					<form method="get" action="/search" id="search_form">
 						<input type="search" name="search_field" placeholder="Ваш запроос" />
 						<input type="submit" class="btn" value="найти" />
 					</form>
 				</div>
 				<div class="sidebar">
+					@if (!Auth::check())
 					<h2>Вход</h2>
-					<form method="post" action="#" id="login">
-						<input type="text" name="login_field" placeholder="логин" />
-						<input type="password" name="password_field" placeholder="пароль" />
+					<form method="get" action="/auth" id="login">
+						<input type="text" name="login" placeholder="логин" />
+						<input type="password" name="password" placeholder="пароль" />
 						<input type="submit" class="btn" value="вход" />
 						<div class="lables_passreg_text">
 							<span><a href="#">забыли пароль?</a></span> | <span><a href="#">регестрация</a></span>
 						</div>
 					</form>
+					@else
+						<a href="/logout">выход</a>
+					@endif
 				</div>
 				<div class="sidebar">
 					<h2>Новости</h2>
@@ -42,26 +46,14 @@
 				</div>
 			</div>
 			<div class="content">
+				@foreach($films as $film)
 				<div class="info_film">
-					<img src="assets/img/inter.png">
-					Когда засуха, пыльные бури и вымирание растений приводят человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и переселить человечество на другую планету.
-					<div class="button"><a href="/show">Cмотреть</a></div>
+					<img src={{$film->img_url}}>
+					<h1>{{$film->title}}</h1>
+					{{$film->description}}
+					<div class="button"><a href="{{$film->video_url}}">Cмотреть</a></div>
 				</div>
-				<div class="info_film">
-					<img src="assets/img/max.png">
-					Преследуемый призраками беспокойного прошлого Макс уверен, что лучший способ выжить - скитаться в одиночестве. Несмотря на это, он присоединяется к бунтарям, бегущим через всю пустыню на боевой фуре, под предводительством отчаянной Фуриосы. Они сбежали из Цитадели, страдающей от тирании Несмертного Джо, и забрали у него кое-что очень ценное. Разъярённый диктатор бросает все свои силы в погоню за мятежниками, ступая на тропу войны - дорогу ярости.
-					<div class="button"><a href="/max">Cмотреть</a></div>
-				</div>
-				<div class="info_film">
-					<img src="assets/img/cloud.png">
-					Шесть историй - пять реинкарнаций, происходящих в разное время, тесно переплетаются между собой...
-					<div class="button"><a href="/cloud">Cмотреть</a></div>
-				</div>
-				<div class="info_film">
-					<img src="assets/img/matrix.png">
-					Жизнь Томаса Андерсона разделена на две части: днём он - самый обычный офисный работник, получающий нагоняи от начальства, а ночью превращается в хакера по имени Нео, и нет места в сети, куда он не смог бы дотянуться. Но однажды всё меняется — герой, сам того не желая, узнаёт страшную правду: всё, что его окружает — не более, чем иллюзия, Матрица, а люди — всего лишь источник питания для искусственного интеллекта, поработившего человечество.
-					<div class="button"><a href="/matrix">Cмотреть</a></div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,6 @@
 @extends('layouts.header')
 @section('title')
-Рейтинг
+Регистрация
 @endsection
 @section('content')
 		<div class="site_content">
@@ -46,39 +46,15 @@
 				</div>
 			</div>
 			<div class="content">
-				
-				<table>
-					<tr>
-						<th></th>
-						<th>Фильмы</th>
-						<th class="center">Год</th>
-						<th class="center">Рейтинг</th>
-					</tr>
-					<tr>
-						<td class="center"><img src="assets/img/inter.png"></td>
-						<td>1. <a href="show.html">Интерстеллар</a></td>
-						<td class="center">2014</td>
-						<td class="center rating">8.6</td>
-					</tr>
-					<tr>
-						<td class="center"><img src="assets/img/matrix.png"></td>
-						<td>2. <a href="matrix.html">Матрица</a></td>
-						<td class="center">1999</td>
-						<td class="center rating">8.7</td>
-					</tr>
-					<tr>
-						<td class="center"><img src="assets/img/max.png"></td>
-						<td>3. <a href="max.html">Безумный Макс</a></td>
-						<td class="center">2015</td>
-						<td class="center rating">8.1</td>
-					</tr>
-					<tr>
-						<td class="center"><img src="assets/img/cloud.png"></td>
-						<td>4. <a href="cloud.html">Облачный атлас</a></td>
-						<td class="center">2014</td>
-						<td class="center rating">7.0</td>
-					</tr>
-				</table>
+				<h1>Поле для регистрации</h1>
+				<div class="send send_contact">	
+					<form method="get" action="/registration" id="registration">
+						<input type="text" name="login" placeholder="логин" />
+						<input type="text" name="email_address" placeholder="email" />
+						<input type="password" name="password" placeholder="пароль" />
+						<input type="submit" class="btn" value="вход" />
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

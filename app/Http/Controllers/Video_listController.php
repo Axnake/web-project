@@ -10,4 +10,9 @@ class Video_listController extends Controller
     {
     	return Video_list::all();
     }
+
+    public function search($title)
+    {
+    	return Video_list::where('title','like', '%'.$title.'%')->get();
+    }
 }

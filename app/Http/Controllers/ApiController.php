@@ -13,7 +13,7 @@ class ApiController extends Controller
     }
     public function filmsAction(Request $request)
     {
-    	return view('films');
+    	return view('films', ['films'=>(new Video_listController())->show()]);
     }
     public function serialsAction(Request $request)
     {
@@ -62,6 +62,20 @@ class ApiController extends Controller
     }
     public function getVideo_list(Request $request)
     {
-        dump((new Video_listController())->show());
+        return((new Video_listController())->show());
+    }
+
+    public function search(Request $request)
+    {
+        $films = (new Video_listController())->search($request->search_field);
+        if (is_null($films)){
+            return "Не найдено";
+        }
+        return view('films',['films' => $films]);
+    }
+
+    public function regAction()
+    {
+        return view('reg');
     }
 }
